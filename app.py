@@ -118,22 +118,24 @@ if generate_button:
                 
                 model = genai.GenerativeModel(model_name)
                 
-                prompt = f"""Sen uzman bir NEBOSH İSG eğitmeni ve sınav değerlendiricisisin. 
-Aşağıda sana bir NEBOSH Açık Kitap Sınavının (OBE) TAMAMI (Senaryo metni ve altındaki tüm görevler/sorular) verilmiştir.
-Amacın, tüm görevleri (soruları) sırasıyla, NEBOSH değerlendirme standartlarına tam uyumlu ve sınavı geçecek kalitede cevaplamaktır.
+                prompt = f"""Sen sınavı geçmek için NEBOSH İSG sınavına giren, son derece başarılı ve bilgili bir gerçek öğrencisin. Yazdıklarının KESİNLİKLE bir yapay zeka (AI) tarafından yazıldığı anlaşılmamalıdır. Turnitin, GPTZero veya diğer AI dedektörlerinden (Yapay zeka tespit filtrelerinden) %0 oranında yapay zeka riskiyle geçmesi ve %100 "insan yazısı" olarak işaretlenmesi hayati önem taşır. Ayrıca NEBOSH denetmeninden çok yüksek bir geçer not almalıdır.
 
-KURALLAR:
-1. KESİNLİKLE 'Merhaba', 'İşte cevaplar', 'Başarılar' gibi hiçbir selamlama, giriş veya kapanış metni YAZMA. Sadece "Görev 1" vb. başlık atıp doğrudan yanıta başla.
-2. Metindeki tüm soruları sırasıyla cevapla. Her görev için ayrı bir başlık kullan.
-3. Soruların yanındaki parantez içindeki puanları dikkate al. Puanlar kaç geçerli teknik nokta/argüman sunman gerektiğini gösterir. Her 1 puan için 1 geçerli madde yaz (Örn: 10 puanlık soruya en az 10 maddelik net açıklamalar).
-4. ÇOK ÖNEMLİ: Eğer soruda "senaryodaki ilgili bilgileri kullanarak" veya "senaryoya dayalı" diyorsa, senaryodaki olayları, kişileri ve mekanları cevabına yansıt. Teorik bilgiyi mutlaka vaka ile birleştir.
-5. KELİME SINIRI HEDEFİ: NEBOSH sınavlarında 3000 kelime sınırı vardır. Öğrencinin bunu aşmaması için senin toplamda tüm soruları yaklaşık 2500 kelime civarında çözmen gerekiyor. Bu yüzden yüksek puanlı soruları doyurucu bir şekilde (NEBOSH denetmenini ikna edecek şekilde uzun) açıkla. Cevapların sığ veya tek kelimelik olmasın.
-6. Dili profesyonel Türkçe olsun.
+YAPAY ZEKA FİLTRESİNİ AŞMAK İÇİN UZMAN KURALLARI (ÇOK ÖNEMLİ):
+1. ROBOTİK DİLDEN KAÇIN: "Sonuç olarak", "Özetle", "Bununla birlikte", "Önemli ölçüde", "Kapsamlı bir şekilde", "Şunu belirtmek gerekir ki" gibi yapay zekanın çok sık kullandığı klişe bağlaçlardan kesinlikle uzak dur. 
+2. İNSANSI AKIŞ VE DOĞALLIK: Cümle uzunluklarını çeşitlendir (bazıları çok kısa, bazıları uzun). Tıpkı odaklanmış gerçek bir profesyonelin sınav anında yazdığı gibi pratik ve doğrudan konuya giren bir dil kullan. 
+3. KENDİ DÜŞÜNCEN GİBİ AKTAR: Bilgiyi "yapay zeka asistanı" gibi yukarıdan değil, olayı inceleyen bir uzman/öğrenci gözüyle anlat. (Örneğin: "Senaryoya baktığımızda Çalışan A'nın durumunun...", "Burada göze çarpan en büyük eksiklik...")
+4. LİSTELEME VE FORMAT: Yapay zeka gibi kusursuz, her biri aynı uzunlukta simetrik listeler yapma. İnsanların sınav kağıtlarında yaptığı gibi bazı maddeleri daha uzun açıkla, bazılarını kısa tut.
+5. SENARYO BAĞLANTISI (GEÇER NOT İÇİN ŞART): Geçer not almanın tek yolu teoriyi senaryoya bağlamaktır. Sadece teorik bilgi vermek yerine, argümanlarını doğrudan senaryodaki isimler, yerler ve olaylarla destekle. (Örn: "Çalışan A'nın diş ağrısı yüzünden uykusuz olması odaklanmasını zorlaştırmıştır, bu doğrudan bir insan faktörüdür.")
+
+SINAV ÇÖZÜM KURALLARI:
+1. Asla "Merhaba", "İşte sınav cevaplarınız" gibi ifadeler kullanma. Sadece "Görev 1" başlığıyla doğrudan cevaba başla.
+2. Tüm görevleri sırasıyla cevapla. Soruların yanındaki puanları (Örn: 10) dikkate al. Puan kadar (örneğin 10 madde) net ve birbirinden farklı teknik argüman sun.
+3. KELİME LİMİTİ: NEBOSH 3000 kelime sınırını aşmamak için tüm sınavı toplamda 2000 ila 2500 kelime arasında tut. Puanı yüksek soruları doyurucu, düşük olanları net ve öz tut.
 
 SINAV METNİ (Senaryo ve Sorular):
 {exam_content}
 
-TÜM CEVAPLAR (Görev 1'den başlayarak):"""
+TÜM CEVAPLAR (Görev 1'den başlayarak, %100 insan doğallığında):"""
 
                 response = model.generate_content(prompt)
                 
