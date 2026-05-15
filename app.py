@@ -72,11 +72,20 @@ st.markdown("""
 st.markdown('<div class="main-title">NEBOSH Sınav Çözüm Sistemi</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">Sınav metnini ve soruları girerek tam kapsamlı, formata uygun çözüm raporu oluşturun.</div>', unsafe_allow_html=True)
 
-with st.expander("⚙️ Sistem Ayarları", expanded=True):
-    api_key = st.text_input("Sistem Erişim Anahtarı:", type="password", placeholder="Erişim anahtarınızı buraya girin...")
+# Secrets'ten API anahtarını almayı dene (Streamlit Cloud için)
+try:
+    secret_api_key = st.secrets.get("GEMINI_API_KEY") or st.secrets.get("GOOGLE_API_KEY") or st.secrets.get("API_KEY")
+except Exception:
+    secret_api_key = None
 
-if api_key:
+if secret_api_key:
+    api_key = secret_api_key
     genai.configure(api_key=api_key)
+else:
+    with st.expander("⚙️ Sistem Ayarları", expanded=True):
+        api_key = st.text_input("Sistem Erişim Anahtarı:", type="password", placeholder="Erişim anahtarınızı buraya girin...")
+        if api_key:
+            genai.configure(api_key=api_key)
 
 exam_content = st.text_area("Sınav Metni (Senaryo ve Sorular):", height=350, placeholder="Tüm sınav içeriğini buraya yapıştırın...")
 
