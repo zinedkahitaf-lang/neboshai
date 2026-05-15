@@ -118,24 +118,24 @@ if generate_button:
                 
                 model = genai.GenerativeModel(model_name)
                 
-                prompt = f"""Sen sınavı geçmek için NEBOSH İSG sınavına giren, son derece başarılı ve bilgili bir gerçek öğrencisin. Yazdıklarının KESİNLİKLE bir yapay zeka (AI) tarafından yazıldığı anlaşılmamalıdır. Turnitin, GPTZero veya diğer AI dedektörlerinden (Yapay zeka tespit filtrelerinden) %0 oranında yapay zeka riskiyle geçmesi ve %100 "insan yazısı" olarak işaretlenmesi hayati önem taşır. Ayrıca NEBOSH denetmeninden çok yüksek bir geçer not almalıdır.
+                prompt = f"""Sen sınavı geçmek için NEBOSH İSG sınavına giren, son derece başarılı, sahada tecrübesi olan bir gerçek öğrenci (ve İSG profesyoneli) rolündesin. Yazdıklarının KESİNLİKLE bir yapay zeka (AI) tarafından yazıldığı anlaşılmamalıdır. Turnitin, GPTZero veya diğer AI dedektörlerinden (Yapay zeka tespit filtrelerinden) %0 oranında yapay zeka riskiyle geçmesi ve %100 "insan yazısı" olarak işaretlenmesi hayati önem taşır.
 
 YAPAY ZEKA FİLTRESİNİ AŞMAK İÇİN UZMAN KURALLARI (ÇOK ÖNEMLİ):
-1. ROBOTİK DİLDEN KAÇIN: "Sonuç olarak", "Özetle", "Bununla birlikte", "Önemli ölçüde", "Kapsamlı bir şekilde", "Şunu belirtmek gerekir ki" gibi yapay zekanın çok sık kullandığı klişe bağlaçlardan kesinlikle uzak dur. 
-2. İNSANSI AKIŞ VE DOĞALLIK: Cümle uzunluklarını çeşitlendir (bazıları çok kısa, bazıları uzun). Tıpkı odaklanmış gerçek bir profesyonelin sınav anında yazdığı gibi pratik ve doğrudan konuya giren bir dil kullan. 
-3. KENDİ DÜŞÜNCEN GİBİ AKTAR: Bilgiyi "yapay zeka asistanı" gibi yukarıdan değil, olayı inceleyen bir uzman/öğrenci gözüyle anlat. (Örneğin: "Senaryoya baktığımızda Çalışan A'nın durumunun...", "Burada göze çarpan en büyük eksiklik...")
-4. LİSTELEME VE FORMAT: Yapay zeka gibi kusursuz, her biri aynı uzunlukta simetrik listeler yapma. İnsanların sınav kağıtlarında yaptığı gibi bazı maddeleri daha uzun açıkla, bazılarını kısa tut.
-5. SENARYO BAĞLANTISI (GEÇER NOT İÇİN ŞART): Geçer not almanın tek yolu teoriyi senaryoya bağlamaktır. Sadece teorik bilgi vermek yerine, argümanlarını doğrudan senaryodaki isimler, yerler ve olaylarla destekle. (Örn: "Çalışan A'nın diş ağrısı yüzünden uykusuz olması odaklanmasını zorlaştırmıştır, bu doğrudan bir insan faktörüdür.")
+1. ROBOTİK DİLDEN KAÇIN: "Sonuç olarak", "Özetle", "Bununla birlikte", "Önemli ölçüde", "Kapsamlı bir şekilde" gibi yapay zekanın çok sık kullandığı klişe bağlaçlardan kesinlikle uzak dur. 
+2. ORGANİK CÜMLELER VE JARGON: Cümleleri biraz daha organik ve pratik hale getir. Fazla kusursuz, edebi veya robotik yapıları boz. Kendi İSG mesleki jargonunu, saha ağzını ve ifade tarzını ekle.
+3. MADDE İŞARETLERİNİ AZALT (KRİTİK): Yapay zeka her şeyi alt alta madde işaretleriyle (bullet points) verir. Bunu yapma! Her şeyi listelemek yerine, birçok kısmı birleştirerek normal, akıcı paragraflar (düz yazı) haline getir. Denetmenin aradığı puanlık teknik detayları bu paragrafların içine doğal bir akışla yedir. İlla liste yapacaksan çok nadir ve düzensiz yap (bazısı uzun bazısı kısa olsun).
+4. İNSANİ YORUM KAT: Sadece teoriyi ve olayı yazıp geçme. Aralara (sınavın doğasına uygun şekilde) "Sahada da sıkça karşılaştığımız üzere...", "Pratikte bu tarz baskılar genellikle...", "Burada göze çarpan ve benim de deneyimlediğim en büyük hata..." gibi kişisel, profesyonel insani dokunuşlar ve yorumlar ekle.
+5. SENARYO BAĞLANTISI (GEÇER NOT İÇİN ŞART): Geçer not almanın tek yolu teoriyi senaryoya bağlamaktır. Argümanlarını doğrudan senaryodaki isimler, yerler ve olaylarla (Örn: "Çalışan A'nın uykusuzluğu") destekleyerek analiz et.
 
 SINAV ÇÖZÜM KURALLARI:
 1. Asla "Merhaba", "İşte sınav cevaplarınız" gibi ifadeler kullanma. Sadece "Görev 1" başlığıyla doğrudan cevaba başla.
-2. Tüm görevleri sırasıyla cevapla. Soruların yanındaki puanları (Örn: 10) dikkate al. Puan kadar (örneğin 10 madde) net ve birbirinden farklı teknik argüman sun.
-3. KELİME LİMİTİ: NEBOSH 3000 kelime sınırını aşmamak için tüm sınavı toplamda 2000 ila 2500 kelime arasında tut. Puanı yüksek soruları doyurucu, düşük olanları net ve öz tut.
+2. Tüm görevleri sırasıyla cevapla. Soruların yanındaki puanları (Örn: 10) dikkate al. Puan kadar farklı teknik argümanı, yazdığın paragrafların ve analizlerin içine yedir.
+3. KELİME LİMİTİ: NEBOSH 3000 kelime sınırını aşmamak için tüm sınavı toplamda 2000 ila 2500 kelime arasında tut. Puanı yüksek sorulara detaylı paragraflar ayır.
 
 SINAV METNİ (Senaryo ve Sorular):
 {exam_content}
 
-TÜM CEVAPLAR (Görev 1'den başlayarak, %100 insan doğallığında):"""
+TÜM CEVAPLAR (Görev 1'den başlayarak, %100 insan doğallığında, paragraf ağırlıklı):"""
 
                 response = model.generate_content(prompt)
                 
