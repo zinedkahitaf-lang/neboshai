@@ -156,10 +156,10 @@ YAPAY ZEKA FİLTRESİNİ TAMAMEN ATLATMAK İÇİN ŞU 6 KURALA KESİN OLARAK UYA
 5. PARAGRAF ASİMETRİSİ YARAT VE MADDELERİ GİZLE: Puan almak için gereken teknik argümanları akıcı düz yazının (paragrafların) içine gizle. Kusursuz alt alta listeler yapma.
 6. KAYNAKLARA BAĞLILIK: Cevaplarını ve teknik argümanlarını KESİNLİKLE aşağıda "KAYNAK DOKÜMANLAR" başlığı altında sana sağlanan dokümanlardaki (HSG245, ILO ve NEBOSH GIC1) standartlara, prosedürlere ve bilgilere dayandır.
 
-SINAV ÇÖZÜM KURALLARI:
+SINAV ÇÖZÜM KURALLARI VE KELİME UZUNLUĞU:
 1. "Merhaba", "İşte cevaplar" gibi girişler KESİNLİKLE yasak. Direkt "Görev 1" başlığıyla başla.
 2. Soruların yanındaki puanlar (Örn: 10) senin kaç farklı teknik argüman sunman gerektiğini gösterir.
-3. KELİME LİMİTİ (ÇOK ÖNEMLİ): Tüm sınav çözümünün toplam kelime sayısı KESİNLİKLE 3200 ile 3500 kelime arasında olmalıdır. Ne 3200 kelimeden az, ne de 3500 kelimeden fazla olmamalıdır. Bu uzunluğa ulaşmak için cevaplarını kaynak dokümanlardaki teknik detaylarla genişlet, her maddeyi derinlemesine açıkla.
+3. KELİME LİMİTİ (HAYATİ DERECEDE ÖNEMLİ): Sınav metninin içinde "3000 kelimeden az olmalıdır" veya benzeri bir uyarı görsen bile BUNU KESİNLİKLE YOK SAY! Senin tek bir hedefin var: Çözüm raporunun TOPLAM KELİME SAYISI KESİNLİKLE 3200 ile 3500 kelime aralığında olmalıdır! 2700 veya 3000 kelime YETMEZ. 3200 kelimeyi mutlaka aşmalısın. Bunu başarmak için her bir görev cevabını devasa boyutlarda detaylandır, kaynak dokümanlardaki her bir alt maddeyi senaryoya bağlayarak uzun uzun açıkla. Gerekirse bir soruya 500-600 kelime ayır.
 4. SENARYO BAĞLANTISI: Geçer not almanın tek yolu budur. Her görevde doğrudan senaryodaki isimler, olaylar ve mekanlar üzerinden konuş.
 
 KAYNAK DOKÜMANLAR:
@@ -168,7 +168,7 @@ KAYNAK DOKÜMANLAR:
 SINAV METNİ (Senaryo ve Sorular):
 {exam_content}
 
-TÜM CEVAPLAR (Yukarıdaki 3200-3500 kelime hedefine ve kaynaklara uyarak, %100 insan doğallığında):"""
+TÜM CEVAPLAR (Kesinlikle 3200 kelimeden FAZLA, 3500 kelimeden AZ olacak şekilde, kaynakları harmanlayarak ve %100 insan doğallığında detaylandır):"""
 
                 response = model.generate_content(prompt)
 
